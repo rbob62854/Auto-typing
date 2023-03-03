@@ -1,0 +1,22 @@
+function fetchAutoTypingData() {
+  return fetch('https://example.com/auto-typing-data')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      return data.autoTypingData;
+    })
+    .catch(error => {
+      console.error('There was a problem fetching auto-typing data:', error);
+    });
+}
+This function uses the fetch API to make an HTTP request to a URL that returns auto-typing data. If the response is successful and returns JSON data, the function extracts the autoTypingData property from the response and returns it. If there is an error, the function logs an error message to the console.
+
+To use this function in your code, you can call it like this:
+
+fetchAutoTypingData().then(data => {
+  // Do something with the auto-typing data
+});
